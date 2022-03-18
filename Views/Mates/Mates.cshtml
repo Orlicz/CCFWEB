@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MvcMate.Models.Mate>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="~/css/IconEX.css" rel="stylesheet" />
+<link href="~/css/Mates.css" rel="stylesheet" />
+<link href="~/css/WordEX.css" rel="stylesheet" />
+
+<div style="display:inline;">
+<h1 style="display:inline;margin-right:10px;color:white" class="LightW">Index</h1>
+<form method="get" style="display:inline;">
+      <span class="sb">
+        <input class="st" type="text" placeholder="搜索" name="search">
+        <a class="sbt">
+        <i class="fa fa-search"></i></a>
+      </span> 
+</form>
+</div>
+
+<p>
+    <a class="LightW" asp-action="Create">Create New</a>
+</p>
+
+<style>
+    #dd{
+        background: url("https://cdn.luogu.com.cn/images/bg/fe/Day_And_Night_4.jpg") center no-repeat;
+        background-size:cover;
+    }
+</style>
+
+@foreach (var item in Model) {
+    string about = "http://note.ms/Peo"+item.Id;
+    <div title=@item.GrURL class="card" style="background: url( @item.GrURL) no-repeat center;">
+        <div class="photo" ><img src=@item.ImgURL alt=""></div>
+        <h1>@item.Name</h1>
+        <h2>@item.Title</h2>
+        <p>@item.Body</p>
+        <a href=@about target="_blank">了解更多</a>
+    </div>
+}

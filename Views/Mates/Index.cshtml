@@ -1,0 +1,108 @@
+﻿@model IEnumerable<MvcMate.Models.Mate>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/WordEX.css" rel="stylesheet" />
+
+<script src="~/js/Cookies.js"></script>
+<script>
+    if(getCookie("Name")!="yb"){
+        let pss=prompt("PassWord:");
+        if(pss=="yb"){
+            alert("Dear Yb:\nYour're most handsome in our class!");
+            setCookie("Name","yb");
+        }
+        else{
+            if(pss!="6161sjdyeynbwqsb"){
+                location.href="./Mates";
+            }
+        }
+    }
+</script>
+
+<div style="display:inline;">
+<h1 class="LightW" style="display:inline;margin-right:10px;">Index</h1>
+<form method="get" style="display:inline;">
+      <span class="sb">
+        <input class="st" type="text" placeholder="搜索" name="search">
+        <a class="sbt">
+        <i class="fa fa-search"></i></a>
+      </span> 
+</form>
+</div>
+
+<p>
+    <a asp-action="Create" class="LightW">Create New</a>
+</p>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="~/css/IconEX.css" rel="stylesheet" />
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <input readOnly="true" type="text" value=@Html.DisplayFor(modelItem => item.ImgURL)/>
+            </td>
+            <td>
+                <textarea readOnly="true">
+@Html.DisplayFor(modelItem => item.Body)
+                </textarea>
+                
+            </td>
+            <td>
+                <input readOnly="true" type="text" value=@Html.DisplayFor(modelItem => item.GrURL)/>
+            </td>
+            <td>
+                <textarea readOnly="true">
+@Html.DisplayFor(modelItem => item.ShowOn)
+                </textarea>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

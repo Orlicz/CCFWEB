@@ -1,0 +1,58 @@
+﻿.sb {
+    display:inline-flex;
+    border-radius: 50px;
+    background: #81C0A0;
+    box-shadow: -20px 20px 32px #3f7d5e, 20px -20px 32px #b1d8c4;
+    width: 50px;
+    height: 50px;
+    transition: 0.4s;
+}
+.sbt {
+    color: #8e44ad;
+    float: right; /* 设置元素浮动 浮动向右 */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #81C0A0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  这三个就是让这个放大镜图标居中*/
+    transition: 0.4s;
+    /* 设置在某一段时间（0.4s）里改变css样式 */
+    text-decoration: none;
+    /* 让文本或内容无样式  这里是去掉了放大镜这个图标的下划线 应为设置连接后自动带下划线 */
+}
+
+
+
+.sb:hover {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.sb:hover{
+    width:200px;
+}
+.sb:hover > .st {
+    width: 150px;
+    padding: 0 10px;
+}
+    .sb:hover > .sbt {
+        left: 200px;
+    }
+.st {
+    border: none;
+    background: none;
+    outline: none; /* 点击搜索时无轮廓出现 */
+    /* 以上三条 去掉搜索框的 边框 背景 以及轮廓线 */
+    float: left; /* 这里也设浮动不过是向左 这样就可以和搜索图标在同一水平线了 */
+    padding: 0;
+    color: white;
+    font-size: 20px; /* 字体大小 */
+    transition: 0.4s;
+    line-height: 40px; /* 之前容器高度给了40像素 这里行高也给40像素 文字就可以居中显示了 */
+    width: 0px; /* 把这个文本框宽度设置为0像素 在鼠标未悬停时就不显示了 从而达到变化效果 */
+
+}

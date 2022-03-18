@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\MS Visual Studio\repos\ClassMates\ClassMates\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-03-18T08:26:27.7500205Z;True|2022-03-18T14:04:49.0294346+08:00;False|2022-03-18T14:04:40.1846779+08:00;True|2022-03-18T14:03:30.1051876+08:00;True|2022-03-17T22:54:22.7861860+08:00;True|2022-03-17T21:20:24.0969284+08:00;True|2022-03-17T21:17:20.7362376+08:00;True|2022-03-16T22:10:00.6619319+08:00;False|2022-03-16T22:09:38.2004877+08:00;True|2022-03-16T22:08:39.8143125+08:00;True|2022-03-16T21:58:36.2055047+08:00;True|2022-03-16T16:02:56.6496812+08:00;True|2022-03-16T15:39:50.7435965+08:00;True|2022-03-15T16:32:04.9991677+08:00;True|2022-03-13T19:59:30.4117283+08:00;True|2022-03-13T12:46:46.1420127+08:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ClassMatesContext">
+      <Value>Server=%28localdb%29\.\MyDB%3bDatabase=ClassMatesContext-22598a33-5902-4830-964b-ac05e8d38684%3bTrusted_Connection=True%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
